@@ -9,9 +9,12 @@ import re
 import plotly.express as px
 import matplotlib.dates as mdates
 
-
-with open('KKs/_chat.txt', 'r', encoding='utf-8') as txt:
-    chat = txt.read()
+try:
+    with open('KKs/_chat.txt', 'r', encoding='utf-8') as txt:
+        chat = txt.read()
+except Exception:
+    with open('_chat.txt', 'r', encoding='utf-8') as txt:
+        chat = txt.read()
 
 chat = chat.strip().split('\n')
 reg_ex = r'\[(\d+/\d+/\d+), (\d+:\d+:\d+)\] (.+): (.)'
