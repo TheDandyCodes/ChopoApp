@@ -37,6 +37,7 @@ chat_df['DiaSemana'] = chat_df['Dia'].dt.dayofweek.map(dict(enumerate(semana)))
 chat_df['DiaSemana'] = pd.Categorical(chat_df['DiaSemana'], categories=semana, ordered=True)
 
 app = dash.Dash(__name__)
+server = app.server
 
 card_style = {
         'border-radius': '8px',  # bordes redondeados
